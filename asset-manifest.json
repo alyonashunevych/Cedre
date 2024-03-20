@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/Cedre/static/css/main.c448ccb8.css",
+    "main.js": "/Cedre/static/js/main.719a7f13.js",
+    "static/media/aboutus.png": "/Cedre/static/media/aboutus.9af0aa32e78ea2a2149d.png",
+    "static/media/kit3.png": "/Cedre/static/media/kit3.fb0235a2ad6d2e28e4f8.png",
+    "static/media/ward2.png": "/Cedre/static/media/ward2.ef24991297c5fca25ba2.png",
+    "static/media/ward1.png": "/Cedre/static/media/ward1.93ff6bbfbcd030cfce93.png",
+    "static/media/kit1.png": "/Cedre/static/media/kit1.9b9447302805830923f4.png",
+    "static/media/bed2.png": "/Cedre/static/media/bed2.278f4da01f4711332878.png",
+    "static/media/bed3.png": "/Cedre/static/media/bed3.af7b548cb5f9e2951815.png",
+    "static/media/saa1.png": "/Cedre/static/media/saa1.e0c9191798637563489a.png",
+    "static/media/dec2.png": "/Cedre/static/media/dec2.97e46fbef189c7d9da1a.png",
+    "static/media/saa3.png": "/Cedre/static/media/saa3.fece0b094a583d3480fa.png",
+    "static/media/dec1.png": "/Cedre/static/media/dec1.25e29be6eaa98df1721e.png",
+    "static/media/block1.jpg": "/Cedre/static/media/block1.0ee4b61aec42d46454b5.jpg",
+    "static/media/bed1.png": "/Cedre/static/media/bed1.fc16d8b7fd130e3a61d9.png",
+    "static/media/saa2.png": "/Cedre/static/media/saa2.e09d6a5e37db154dd9b1.png",
+    "static/media/dec3.png": "/Cedre/static/media/dec3.0795a273917265f44cff.png",
+    "static/media/kit2.png": "/Cedre/static/media/kit2.fe7c6e6b0fe8e60f74ea.png",
+    "static/media/ward3.png": "/Cedre/static/media/ward3.687732821e3a4b683517.png",
+    "static/media/behance.svg": "/Cedre/static/media/behance.8629cb40cca2836184253232df68455e.svg",
+    "static/media/cart.svg": "/Cedre/static/media/cart.d25a8d531eb851b4e57d.svg",
+    "static/media/account.svg": "/Cedre/static/media/account.ec89303cb8c4126b1458.svg",
+    "static/media/inst.svg": "/Cedre/static/media/inst.ee461eac17582a3f8c056ce8f017ccc3.svg",
+    "static/media/tg.svg": "/Cedre/static/media/tg.8b3d4ea0fb79574c3a899c5a1f866586.svg",
+    "static/media/arrow.svg": "/Cedre/static/media/arrow.b63f203b3bfd402c98a5.svg",
+    "static/media/search.svg": "/Cedre/static/media/search.a2273c54491186b99576.svg",
+    "index.html": "/Cedre/index.html",
+    "main.c448ccb8.css.map": "/Cedre/static/css/main.c448ccb8.css.map",
+    "main.719a7f13.js.map": "/Cedre/static/js/main.719a7f13.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c448ccb8.css",
+    "static/js/main.719a7f13.js"
+  ]
+}
