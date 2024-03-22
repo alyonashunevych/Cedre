@@ -10,7 +10,7 @@ export const routing = createBrowserRouter([
       children: [
         {
           element: <Main/>,
-          index: true
+          path: "/Cedre"
         },
         {
           element: <Catalog/>,

@@ -9,7 +9,7 @@ export default function Header() {
 
         <ul className="navigation">
           <li>
-            <NavLink exact to="/" className="link" activeClassName="active">
+            <NavLink exact to="/Cedre" className="link" activeClassName="active">
               Home
             </NavLink>
           </li>
