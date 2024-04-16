@@ -16,9 +16,9 @@ export default function Footer() {
                 <a href="tel:+38 (096) 875 49 57" className='tel'>+38 (096) 875 49 57</a>
                 <a href="https://maps.app.goo.gl/7UNNHzttEpRxTgGJ8" className='footer_link'>Address: 37, Beresteyskyi Prospect, Kyiv</a>
                 <div className='sites'>
-                    <a href="https://www.instagram.com/alyona_shunevych/"><img src={inst}/></a>
-                    <a href="https://t.me/alona_shunevych"><img src={tg}/></a>
-                    <a href="https://www.behance.net/alyona_shunevych"><img src={behance}/></a>
+                    <a href="https://www.instagram.com/alyona_shunevych/"><img src={inst} alt="inst"/></a>
+                    <a href="https://t.me/alona_shunevych"><img src={tg} alt="tg"/></a>
+                    <a href="https://www.behance.net/alyona_shunevych"><img src={behance} alt="behance"/></a>
                 </div>
             </div>
             <div className='nav_box2'>
