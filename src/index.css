@@ -162,6 +162,7 @@ h2,
 
 .cat_h1{
   margin-bottom: -0.8vw;
+  width: fit-content;
 }
 
 .cat_h2 {
@@ -402,6 +403,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 1.85vw;
+  width: fit-content;
 }
 
 .param_box {
@@ -413,4 +415,14 @@ footer {
 .catalog {
   margin-top: 10vw;
   margin-bottom: 10vw;
+  display: flex;
+  flex-direction: row;
+  width: 87.59vw;
+  justify-content: space-between;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  width: 65.4vw;
 }
