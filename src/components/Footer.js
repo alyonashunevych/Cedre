@@ -16,9 +16,9 @@ export default function Footer() {
                 <a href="tel:+38 (096) 875 49 57" className='tel'>+38 (096) 875 49 57</a>
                 <a href="https://maps.app.goo.gl/7UNNHzttEpRxTgGJ8" className='footer_link'>Address: 37, Beresteyskyi Prospect, Kyiv</a>
                 <div className='sites'>
-                    <a href="https://www.instagram.com/alyona_shunevych/"><img src={inst} alt="inst"/></a>
-                    <a href="https://t.me/alona_shunevych"><img src={tg} alt="tg"/></a>
-                    <a href="https://www.behance.net/alyona_shunevych"><img src={behance} alt="behance"/></a>
+                    <a href="https://www.instagram.com/alyona_shunevych/"><img src={inst} style={{ height: "1.5vw" }} alt="inst"/></a>
+                    <a href="https://t.me/alona_shunevych"><img src={tg} style={{ height: "1.5vw" }} alt="tg"/></a>
+                    <a href="https://www.behance.net/alyona_shunevych"><img src={behance} style={{ height: "1.5vw" }} alt="behance"/></a>
                 </div>
             </div>
             <div className='nav_box2'>
@@ -39,7 +39,11 @@ export default function Footer() {
                 </NavLink>
             </div>
             <div className='nav_box2'>
-                <NavLink to="/sofas and armchairs" className="footer_link">
+                <NavLink to="/sofas" className="footer_link">
+                    Sofas and Armchairs
+                </NavLink>
+                <NavLink to="/sofas and armchairs
+                " className="footer_link">
                     Sofas and Armchairs
                 </NavLink>
                 <NavLink to="/wardrobes" className="footer_link">

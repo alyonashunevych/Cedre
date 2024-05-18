@@ -107,7 +107,7 @@ li {
   background-color: transparent;
 }
 
-.basket {
+.basket, .item_basket {
   background-image: url("img/cart.svg");
   width: 1.68vw;
   height: 1.434vw;
@@ -116,6 +116,10 @@ li {
   border: none;
   cursor: pointer;
   background-color: transparent;
+}
+
+.item_basket {
+  margin-top: 0.1vw;
 }
 
 .menu {
@@ -151,7 +155,8 @@ h2,
   margin-bottom: 0.62vw;
 }
 
-.cat_h1, h1 {
+.cat_h1,
+h1 {
   font-family: var(--title-font);
   font-size: 3.75vw;
   font-weight: 400;
@@ -160,7 +165,7 @@ h2,
   text-align: start;
 }
 
-.cat_h1{
+.cat_h1 {
   margin-bottom: -0.8vw;
   width: fit-content;
 }
@@ -210,6 +215,7 @@ h1 {
   background-image: url("img/arrow.svg");
   background-repeat: no-repeat;
   background-position: calc(100% - 1.25vw) center;
+  background-size: 1.3vw;
   padding: 0 0 0 1.25vw;
   background-color: var(--beige2);
   cursor: pointer;
@@ -399,7 +405,8 @@ footer {
   cursor: pointer;
 }
 
-.param_box, .filter {
+.param_box,
+.filter {
   display: flex;
   flex-direction: column;
   gap: 1.85vw;
@@ -417,12 +424,53 @@ footer {
   margin-bottom: 10vw;
   display: flex;
   flex-direction: row;
-  width: 87.59vw;
+  width: 87.6vw;
   justify-content: space-between;
 }
 
 .items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1.88vw;
+  width: 66vw;
+  align-content: flex-start;
+}
+
+.item {
   display: flex;
   flex-direction: column;
-  width: 65.4vw;
+  width: 17vw;
+  height: 17vw;
+  padding: 1.88vw 1.88vw;
+  justify-content: flex-end;
+  align-content: flex-end;
+  gap: 0.3vw;
+}
+
+.item_title {
+  font-family: var(--main-font);
+  color: var(--black1);
+  font-size: 1.13vw;
+}
+
+.item_price {
+  font-family: var(--title-font);
+  color: var(--black1);
+  font-size: 1.57vw;
+}
+
+.i_box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: -0.5vw;
+}
+
+.item_message {
+  font-family: var(--main-font);
+  color: var(--black1);
+  font-size: 1.7vw;
+  width: 66vw;
+  text-align: center;
+  margin-top: 0.5vw;
 }
