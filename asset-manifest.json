@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Cedre/static/css/main.c448ccb8.css",
-    "main.js": "/Cedre/static/js/main.16d86257.js",
+    "main.css": "/Cedre/static/css/main.bb37967e.css",
+    "main.js": "/Cedre/static/js/main.8baf70eb.js",
     "static/media/aboutus.png": "/Cedre/static/media/aboutus.9af0aa32e78ea2a2149d.png",
     "static/media/kit3.png": "/Cedre/static/media/kit3.fb0235a2ad6d2e28e4f8.png",
     "static/media/ward2.png": "/Cedre/static/media/ward2.ef24991297c5fca25ba2.png",
@@ -19,19 +19,19 @@
     "static/media/dec3.png": "/Cedre/static/media/dec3.0795a273917265f44cff.png",
     "static/media/kit2.png": "/Cedre/static/media/kit2.fe7c6e6b0fe8e60f74ea.png",
     "static/media/ward3.png": "/Cedre/static/media/ward3.687732821e3a4b683517.png",
-    "static/media/behance.svg": "/Cedre/static/media/behance.8629cb40cca2836184253232df68455e.svg",
-    "static/media/cart.svg": "/Cedre/static/media/cart.d25a8d531eb851b4e57d.svg",
-    "static/media/account.svg": "/Cedre/static/media/account.ec89303cb8c4126b1458.svg",
-    "static/media/inst.svg": "/Cedre/static/media/inst.ee461eac17582a3f8c056ce8f017ccc3.svg",
-    "static/media/tg.svg": "/Cedre/static/media/tg.8b3d4ea0fb79574c3a899c5a1f866586.svg",
-    "static/media/arrow.svg": "/Cedre/static/media/arrow.b63f203b3bfd402c98a5.svg",
-    "static/media/search.svg": "/Cedre/static/media/search.a2273c54491186b99576.svg",
+    "static/media/behance.svg": "/Cedre/static/media/behance.ad615140e313b469db362e5895e60d4e.svg",
+    "static/media/cart.svg": "/Cedre/static/media/cart.bce28575f53aaf7b4495.svg",
+    "static/media/account.svg": "/Cedre/static/media/account.65380794d05ab4107292.svg",
+    "static/media/inst.svg": "/Cedre/static/media/inst.16e6222f64a3d153bc524544ac631cd2.svg",
+    "static/media/tg.svg": "/Cedre/static/media/tg.ff4bce1a3bd5b9fe7b922b69a0576fb7.svg",
+    "static/media/arrow.svg": "/Cedre/static/media/arrow.34707507b175c7b2bb15.svg",
+    "static/media/search.svg": "/Cedre/static/media/search.21dfda5f28a3f8d6db57.svg",
     "index.html": "/Cedre/index.html",
-    "main.c448ccb8.css.map": "/Cedre/static/css/main.c448ccb8.css.map",
-    "main.16d86257.js.map": "/Cedre/static/js/main.16d86257.js.map"
+    "main.bb37967e.css.map": "/Cedre/static/css/main.bb37967e.css.map",
+    "main.8baf70eb.js.map": "/Cedre/static/js/main.8baf70eb.js.map"
   },
   "entrypoints": [
-    "static/css/main.c448ccb8.css",
-    "static/js/main.16d86257.js"
+    "static/css/main.bb37967e.css",
+    "static/js/main.8baf70eb.js"
   ]
 }
