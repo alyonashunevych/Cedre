@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Cedre/static/css/main.bb37967e.css",
-    "main.js": "/Cedre/static/js/main.0a61e719.js",
+    "main.js": "/Cedre/static/js/main.ae8a7547.js",
     "static/media/aboutus.png": "/Cedre/static/media/aboutus.9af0aa32e78ea2a2149d.png",
     "static/media/kit3.png": "/Cedre/static/media/kit3.fb0235a2ad6d2e28e4f8.png",
     "static/media/ward2.png": "/Cedre/static/media/ward2.ef24991297c5fca25ba2.png",
@@ -28,10 +28,10 @@
     "static/media/search.svg": "/Cedre/static/media/search.21dfda5f28a3f8d6db57.svg",
     "index.html": "/Cedre/index.html",
     "main.bb37967e.css.map": "/Cedre/static/css/main.bb37967e.css.map",
-    "main.0a61e719.js.map": "/Cedre/static/js/main.0a61e719.js.map"
+    "main.ae8a7547.js.map": "/Cedre/static/js/main.ae8a7547.js.map"
   },
   "entrypoints": [
     "static/css/main.bb37967e.css",
-    "static/js/main.0a61e719.js"
+    "static/js/main.ae8a7547.js"
   ]
 }
