@@ -10,7 +10,7 @@ export default function Filter({ priceRanges }) {
   const collectionNames = {
     Sofa: "Sofa",
     Armchair: "Armchair",
-    // Додати інші колекції за потребою
+    Wardrobe: "Wardrobe"
   };
 
   useEffect(() => {

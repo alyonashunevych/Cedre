@@ -13,7 +13,7 @@ export default function Block1() {
   const collectionNames = {
     Sofa: "Sofa",
     Armchair: "Armchair",
-    // Додати інші колекції за потребою
+    Wardrobe: "Wardrobe",
   };
 
   useEffect(() => {

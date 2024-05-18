@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import img1 from "../../img/ward1.png";
 import img2 from "../../img/ward2.png";
 import img3 from "../../img/ward3.png";
+import { FiltersContext } from "../FiltersContext"; 
 
 export default function Block3() {
+  const navigate = useNavigate();
+  const { setFilters } = useContext(FiltersContext);
+
+  const handleSeeMoreClick = () => {
+    setFilters({ type: ['Wardrobe'] });
+    navigate('/catalog');
+  };
+
   return (
     <div className="block3">
       <h2>Wardrobes</h2>
@@ -20,7 +30,7 @@ export default function Block3() {
             to help you organize your space efficiently while adding charm and
             style to your interior.
           </p>
-          <button className="see_more">Search</button>
+          <button className="see_more" onClick={handleSeeMoreClick}>Search</button>
         </div>
       </div>
     </div>

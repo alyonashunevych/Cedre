@@ -16,7 +16,7 @@ export default function Item({ filters }) {
         const collections = {
           Sofa: "Sofa",
           Armchair: "Armchair",
-          // Додати інші колекції за потреби
+          Wardrobe: "Wardrobe"
         };
 
         let allItems = [];
