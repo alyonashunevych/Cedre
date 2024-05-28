@@ -447,13 +447,13 @@ footer {
   gap: 0.3vw;
 }
 
-.item_title {
+.item_title, .bag_item_title, .bag_title {
   font-family: var(--main-font);
   color: var(--black1);
   font-size: 1.13vw;
 }
 
-.item_price {
+.item_price, .bag_item_price {
   font-family: var(--title-font);
   color: var(--black1);
   font-size: 1.57vw;
@@ -473,4 +473,161 @@ footer {
   width: 66vw;
   text-align: center;
   margin-top: 0.5vw;
+}
+
+.overlay {
+  display: flex;
+  position: fixed;
+  overflow-y: auto;
+  top: 6.2vw;
+  left: 0;
+  width: 100%;
+  height: 85%;
+  z-index: 1000;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.shop_bag {
+  width: 18.15vw;
+  padding: 1.62vw 1.3vw;
+  background: #FFF;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  margin-right: 5.55vw;
+  border-radius: 1.5vw;
+}
+
+.bag_title {
+  margin-bottom: 1vw;
+  white-space: nowrap;          
+  overflow: hidden;            
+  text-overflow: ellipsis; 
+}
+
+.bag_item {
+  display: flex;
+  flex-direction: row;
+  gap: 1.1vw;
+  margin-bottom: 1vw;
+}
+
+.bag_item_img {
+  width: 8.8vw;
+  height: 8.8vw;
+  background-size: contain;
+}
+
+.bag_item_info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.32vw;
+  width: 8.52vw;
+}
+
+.bag_item_title {
+  font-size: 1vw;
+  margin-bottom: 0.5vw;
+  white-space: nowrap;          
+  overflow: hidden;            
+  text-overflow: ellipsis; 
+}
+
+.subt{
+  font-family: var(--main-font);
+  font-size: 1.2vw;
+  font-weight: 700;
+  color: black;
+  width: 10.42vw;
+}
+
+.bag_item_text {
+  font-family: var(--main-font);
+  font-size: 0.7vw;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.6);
+  white-space: nowrap;          
+  overflow: hidden;            
+  text-overflow: ellipsis; 
+}
+
+.bag_item_price {
+  width: 100%;
+  height: 1.75vw;
+  text-align: end;
+  margin-top: 0.5vw;
+}
+
+.subt_box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1.29vw;
+}
+
+.empty_bag {
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.empty_bag_message {
+  font-size: 18px;
+}
+
+.empty_bag_button {
+  font-family: var(--main-font);
+  font-size: 0.97vw;
+  font-weight: 500;
+  height: 100%;
+  width: 100%;
+  color: black;
+  background-color: white;
+  padding: 0.67vw;
+  border: 0.1vw solid black;
+  cursor: pointer;
+  margin-top: 0.7vw;
+  border-radius: 1.5vw;
+}
+
+.bag_overlay {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: fixed;
+  overflow-y: auto;
+  top: 6.2vw;
+  left: 73vw;
+  width: 17.2vw;
+  height: 3vw;
+  z-index: 1000;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 1.5vw;
+}
+
+.checkout{
+  font-family: var(--main-font);
+  font-size: 0.97vw;
+  font-weight: 500;
+  height: 100%;
+  width: 100%;
+  color: white;
+  padding: 0.67vw;
+  border: 0;
+  background-color: black;
+  cursor: pointer;
+  border-radius: 1.5vw;
+}
+
+.remove_item_button {
+  font-family: var(--main-font);
+  font-size: 0.7vw;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.6);
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  width: 100%;
+  margin-top: -0.3vw;
+  text-align: end;
 }

@@ -1,10 +1,28 @@
-// Item.js
 import React, { useEffect, useState } from "react";
 import { db, storage } from "../firebase";
+import { v4 as uuidv4 } from "uuid";
+import { useCookies } from "react-cookie";
+import arrow from '../../img/arrow_bag.png';
 
 export default function Item({ filters }) {
+  const generateSessionID = () => {
+    return uuidv4();
+  };
+
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [cookies, setCookie] = useCookies(["sessionID"]);
+  const [sessionID] = useState(() => {
+    const existingSessionID = cookies.sessionID;
+    if (existingSessionID) {
+      return existingSessionID;
+    } else {
+      const newSessionID = generateSessionID();
+      setCookie("sessionID", newSessionID, { path: "/" });
+      return newSessionID;
+    }
+  });
+  const [showBagOverlay, setShowBagOverlay] = useState(false);
 
   useEffect(() => {
     console.log("Current Filters:", filters);
@@ -16,12 +34,12 @@ export default function Item({ filters }) {
         const collections = {
           Sofa: "Sofa",
           Armchair: "Armchair",
-          Wardrobe: "Wardrobe"
+          Wardrobe: "Wardrobe",
         };
 
         let allItems = [];
 
-        for (const [key, collectionName] of Object.entries(collections)) {
+        for (const collectionName of Object.values(collections)) {
           const snapshot = await db.collection(collectionName).get();
 
           const promises = snapshot.docs.map(async (doc) => {
@@ -30,9 +48,7 @@ export default function Item({ filters }) {
               console.error(`Error: Price is undefined for document with ID ${doc.id}`);
               return null;
             }
-            const imageUrl = await storage
-              .refFromURL(productData.img)
-              .getDownloadURL();
+            const imageUrl = await storage.refFromURL(productData.img).getDownloadURL();
             return {
               id: doc.id,
               product_name: productData.product_name,
@@ -72,10 +88,10 @@ export default function Item({ filters }) {
         });
 
         setItems(filteredItems);
-        setLoading(false); // Встановлюємо loading в false після завершення завантаження
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching items: ", error);
-        setLoading(false); // Встановлюємо loading в false в разі помилки
+        setLoading(false);
       }
     };
 
@@ -87,12 +103,75 @@ export default function Item({ filters }) {
   }, [items]);
 
   if (loading) {
-    return <div className="item_message">Loading...</div>; // Повертаємо повідомлення про завантаження, якщо loading === true
+    return <div className="item_message">Loading...</div>;
   }
 
   if (items.length === 0) {
-    return <div className="item_message">No items found</div>; // Повертаємо повідомлення, якщо немає знайдених товарів
+    return <div className="item_message">No items found</div>;
   }
+
+  const handleAddToBagClick = (product) => {
+    if (product) {
+      const newItem = {
+        id: product.id,
+        quantity: 1,
+        product_name: product.product_name,
+        color: product.color,
+        price: product.price,
+        img: product.img,
+        collection_name: product.collection_name,
+        material: product.material,
+      };
+
+      db.collection("ShoppingBag")
+        .doc(sessionID)
+        .get()
+        .then((doc) => {
+          if (doc.exists) {
+            const existingItems = doc.data().items || [];
+            const updatedItems = [...existingItems, newItem];
+
+            db.collection("ShoppingBag")
+              .doc(sessionID)
+              .set({ items: updatedItems })
+              .then(() => {
+                console.log("Item added to shopping bag in Firestore");
+              });
+          } else {
+            db.collection("ShoppingBag")
+              .doc(sessionID)
+              .set({ items: [newItem] })
+              .then(() => {
+                console.log("New shopping bag created in Firestore");
+              });
+          }
+        })
+        .catch((error) => {
+          console.error("Error accessing shopping bag:", error);
+        });
+      
+      setShowBagOverlay(true);
+      setTimeout(() => {
+        setShowBagOverlay(false);
+      }, 2000);
+    }
+  };
+
+  function formatCurrency(input) {
+    const amount = parseFloat(input);
+    if (!isNaN(amount)) {
+      const formattedAmount = amount.toLocaleString("en-US", {
+        minimumFractionDigits: 2,
+      });
+      return `$${formattedAmount}`;
+    } else {
+      return input;
+    }
+  }
+
+  const closeBagOverlay = () => {
+    setShowBagOverlay(false);
+  };
 
   return (
     <main className="items">
@@ -112,11 +191,16 @@ export default function Item({ filters }) {
             <span style={{ fontWeight: "700" }}> {el.product_name}</span>
           </p>
           <div className="i_box">
-            <p className="item_price">${el.price}</p>
-            <button className="item_basket"></button>
+            <p className="item_price">{formatCurrency(el.price)}</p>
+            <button className="item_basket" onClick={() => handleAddToBagClick(el)}></button>
           </div>
         </div>
       ))}
+      {showBagOverlay && (
+        <div className="bag_overlay">
+          <img src={arrow}></img>
+        </div>
+      )}
     </main>
   );
 }
