@@ -14,6 +14,7 @@ export default function Block1() {
     Sofa: "Sofa",
     Armchair: "Armchair",
     Wardrobe: "Wardrobe",
+    Bed: "Bed"
   };
 
   useEffect(() => {

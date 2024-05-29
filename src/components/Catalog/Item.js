@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { db, storage } from "../firebase";
 import { v4 as uuidv4 } from "uuid";
 import { useCookies } from "react-cookie";
-import arrow from '../../img/arrow_bag.png';
+import arrow from "../../img/arrow_bag.png";
 
 export default function Item({ filters }) {
   const generateSessionID = () => {
@@ -35,6 +35,7 @@ export default function Item({ filters }) {
           Sofa: "Sofa",
           Armchair: "Armchair",
           Wardrobe: "Wardrobe",
+          Bed: "Bed",
         };
 
         let allItems = [];
@@ -45,10 +46,14 @@ export default function Item({ filters }) {
           const promises = snapshot.docs.map(async (doc) => {
             const productData = doc.data();
             if (!productData.price) {
-              console.error(`Error: Price is undefined for document with ID ${doc.id}`);
+              console.error(
+                `Error: Price is undefined for document with ID ${doc.id}`
+              );
               return null;
             }
-            const imageUrl = await storage.refFromURL(productData.img).getDownloadURL();
+            const imageUrl = await storage
+              .refFromURL(productData.img)
+              .getDownloadURL();
             return {
               id: doc.id,
               product_name: productData.product_name,
@@ -74,7 +79,8 @@ export default function Item({ filters }) {
           const priceFilter = filters.price ? filters.price[0] : null;
 
           const typeMatch = !typeFilter || item.collection_name === typeFilter;
-          const materialMatch = !materialFilter || item.material.includes(materialFilter);
+          const materialMatch =
+            !materialFilter || item.material.includes(materialFilter);
           const colorMatch = !colorFilter || item.color.includes(colorFilter);
           const priceMatch =
             !priceFilter ||
@@ -149,7 +155,7 @@ export default function Item({ filters }) {
         .catch((error) => {
           console.error("Error accessing shopping bag:", error);
         });
-      
+
       setShowBagOverlay(true);
       setTimeout(() => {
         setShowBagOverlay(false);
@@ -192,7 +198,10 @@ export default function Item({ filters }) {
           </p>
           <div className="i_box">
             <p className="item_price">{formatCurrency(el.price)}</p>
-            <button className="item_basket" onClick={() => handleAddToBagClick(el)}></button>
+            <button
+              className="item_basket"
+              onClick={() => handleAddToBagClick(el)}
+            ></button>
           </div>
         </div>
       ))}

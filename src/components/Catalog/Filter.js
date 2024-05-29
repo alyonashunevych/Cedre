@@ -10,57 +10,63 @@ export default function Filter({ priceRanges }) {
   const collectionNames = {
     Sofa: "Sofa",
     Armchair: "Armchair",
-    Wardrobe: "Wardrobe"
+    Wardrobe: "Wardrobe",
+    Bed: "Bed"
   };
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        let uniqueMaterials = new Set();
-        let uniqueColors = [];
-        let uniqueTypes = new Set();
+    // Отримуємо список всіх можливих типів товарів
+    setProductTypes(Object.keys(collectionNames));
+  }, []);
 
-        for (const [key, collectionName] of Object.entries(collectionNames)) {
-          const snapshot = await db.collection(collectionName).get();
+  useEffect(() => {
+    const fetchMaterialsAndColors = async () => {
+      if (filters.type && filters.type.length > 0) {
+        const selectedType = filters.type[0];
+        try {
+          let uniqueMaterials = new Set();
+          let uniqueColors = [];
+
+          // Отримуємо дані про товари вибраного типу
+          const snapshot = await db.collection(collectionNames[selectedType]).get();
 
           snapshot.forEach((doc) => {
             const data = doc.data();
+            // Збираємо унікальні матеріали та кольори
             data.material.forEach((material) => {
               uniqueMaterials.add(material);
             });
             uniqueColors.push(data.color);
           });
 
-          uniqueTypes.add(key);
+          setAvailableMaterials(Array.from(uniqueMaterials));
+          setColors(Array.from(new Set(uniqueColors)));
+        } catch (error) {
+          console.error("Error fetching data: ", error);
         }
-
-        setAvailableMaterials(Array.from(uniqueMaterials));
-        setColors(Array.from(new Set(uniqueColors)));
-        setProductTypes(Array.from(uniqueTypes));
-      } catch (error) {
-        console.error("Error fetching data: ", error);
       }
     };
 
-    fetchData();
-  }, []);
+    fetchMaterialsAndColors();
+  }, [filters.type]);
 
   const handleFilterChange = (category, value) => {
-    if (category === "type" || category === "price") {
-      // Якщо обирається тип або ціна, скидати попередні фільтри
+    if (category === "type") {
       setFilters((prevState) => ({ ...prevState, [category]: [value] }));
+    } else if (category === "price") {
+      setFilters((prevState) => {
+        if (prevState.price && prevState.price.includes(value)) {
+          return { ...prevState, [category]: [] };
+        }
+        return { ...prevState, [category]: [value] };
+      });
     } else {
-      // Якщо обирається матеріал або колір, додати або видалити зі списку
-      if (!filters[category] || filters[category].length === 0) {
-        setFilters((prevState) => ({ ...prevState, [category]: [value] }));
-      } else {
-        setFilters((prevState) => ({
-          ...prevState,
-          [category]: prevState[category].includes(value)
-            ? prevState[category].filter((item) => item !== value)
-            : [...prevState[category], value],
-        }));
-      }
+      setFilters((prevState) => ({
+        ...prevState,
+        [category]: prevState[category]?.includes(value)
+          ? prevState[category].filter((item) => item !== value)
+          : [...(prevState[category] || []), value],
+      }));
     }
   };
 

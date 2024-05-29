@@ -467,12 +467,15 @@ footer {
 }
 
 .item_message {
+  position: fixed;
   font-family: var(--main-font);
   color: var(--black1);
   font-size: 1.7vw;
   width: 66vw;
   text-align: center;
   margin-top: 0.5vw;
+  left: 27vw;
+  
 }
 
 .overlay {
