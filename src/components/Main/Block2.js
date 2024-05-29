@@ -12,6 +12,7 @@ export default function Block2() {
   const handleSeeMoreClick = () => {
     setFilters({ type: ['Sofa'] });
     navigate('/catalog');
+    window.scrollTo(0, 0);
   };
 
   return (

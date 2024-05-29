@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import img1 from "../../img/bed1.png";
 import img2 from "../../img/bed2.png";
 import img3 from "../../img/bed3.png";
+import { FiltersContext } from "../FiltersContext"; 
+
 
 export default function Block4() {
+  const navigate = useNavigate();
+  const { setFilters } = useContext(FiltersContext);
+
+  const handleSeeMoreClick = () => {
+    setFilters({ type: ['Bed'] });
+    navigate('/catalog');
+    window.scrollTo(0, 0);
+  };
   return (
     <div className="block4">
       <h2>Beds</h2>
@@ -17,7 +28,7 @@ export default function Block4() {
             designs, you can find the perfect bed to fit your bedroom and create
             an atmosphere of tranquility and comfort.
           </p>
-          <button className="see_more">Search</button>
+          <button className="see_more" onClick={handleSeeMoreClick}>Search</button>
         </div>
 
         <img src={img2} alt="Bed2" className="big_img" />

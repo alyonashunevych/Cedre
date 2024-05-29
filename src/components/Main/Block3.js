@@ -12,6 +12,7 @@ export default function Block3() {
   const handleSeeMoreClick = () => {
     setFilters({ type: ['Wardrobe'] });
     navigate('/catalog');
+    window.scrollTo(0, 0);
   };
 
   return (
