@@ -175,10 +175,6 @@ export default function Item({ filters }) {
     }
   }
 
-  const closeBagOverlay = () => {
-    setShowBagOverlay(false);
-  };
-
   return (
     <main className="items">
       {items.map((el) => (
@@ -207,7 +203,7 @@ export default function Item({ filters }) {
       ))}
       {showBagOverlay && (
         <div className="bag_overlay">
-          <img src={arrow}></img>
+          <img src={arrow} alt='arrow'></img>
         </div>
       )}
     </main>
