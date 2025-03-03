@@ -255,8 +255,7 @@ main {
 .block3,
 .block4,
 .block5,
-.block6,
-.block7 {
+.block6 {
   margin-bottom: 5.7vw;
 }
 
@@ -276,8 +275,10 @@ main {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
   width: 87.59vw;
+  margin-bottom: 9vw;
+  justify-content: center;
+  gap: 1vw;
 }
 
 .box {
@@ -317,9 +318,9 @@ main {
 }
 
 .big_img_au {
-  width: 44.46vw;
-  height: 32.07vw;
-  margin-top: 1vw;
+  height: 27.7vw;
+  object-fit: contain;
+  align-self: flex-end;
 }
 
 .lil_img {

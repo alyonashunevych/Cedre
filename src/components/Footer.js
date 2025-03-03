@@ -35,7 +35,7 @@ export default function Footer() {
   };
 
   return (
-    <footer>
+    <footer id="footer">
       <p className="footer_text">We will create the home of your dreams</p>
       <div className="foot_box">
         <span className="foot_logo">Cèdre</span>
@@ -72,14 +72,14 @@ export default function Footer() {
             <NavLink to="/delivery" className="footer_link">
               Delivery
             </NavLink>
+            <NavLink to="/about-us" className="footer_link">
+              About us
+            </NavLink>
             <NavLink to="/news" className="footer_link">
               News
             </NavLink>
             <NavLink to="/reviews" className="footer_link">
               Reviews
-            </NavLink>
-            <NavLink to="/about us" className="footer_link">
-              About us
             </NavLink>
           </div>
           <div className="nav_box2">

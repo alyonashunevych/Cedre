@@ -1,9 +1,10 @@
 import React from "react";
 import img1 from "../../img/aboutus.png";
 
-export default function Block7() {
+export default function AboutUs() {
+  window.scrollTo(0, 0);
   return (
-    <div className="block7">
+    <div className="block7 content">
       <div className="au_block">
         <h2>About Us</h2>
         <div className="au_block2">

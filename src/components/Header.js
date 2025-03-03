@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import React, { useState } from "react";
 import Bag from "./Bag.js";
+import { Link } from "react-scroll";
 
 export default function Header() {
   const [showBagOverlay, setShowBagOverlay] = useState(false);
@@ -40,9 +41,14 @@ export default function Header() {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/contacts" className="link" activeClassName="active">
-                Contacts
+              <NavLink to="/about-us" className="link" activeClassName="active">
+                About us
               </NavLink>
+            </li>
+            <li>
+              <Link to="footer" smooth={true} duration={500} className="link">
+                Contacts
+              </Link>
             </li>
           </ul>
 
@@ -50,7 +56,6 @@ export default function Header() {
             <NavLink to="/Cedre">
               <button className="search"></button>
             </NavLink>
-            <button className="account"></button>
             <button onClick={handleBagClick} className="basket"></button>
           </ul>
         </div>
